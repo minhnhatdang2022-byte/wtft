@@ -2,54 +2,77 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Phạm Hải Đăng | 12A4</title>
+  <title>Phạm Hải Đăng 12A4</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #ff6a88, #ff99ac);
-      display: flex;
-      justify-content: center;
-      padding: 20px;
-      color: #333;
+    * {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    .container {
-      background: #fff;
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
       max-width: 420px;
       width: 100%;
       border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
       padding: 25px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto;
+      display: block;
+      object-fit: cover;
+      border: 4px solid #ff7a7a;
     }
 
     h1 {
       text-align: center;
-      margin-bottom: 5px;
+      margin: 15px 0 5px;
     }
 
     .class {
       text-align: center;
-      color: #ff5c8a;
-      font-weight: bold;
-      margin-bottom: 20px;
+      color: #666;
+      margin-bottom: 15px;
     }
 
     .section {
-      margin-bottom: 20px;
+      margin-top: 15px;
     }
 
     .section h3 {
-      margin-bottom: 8px;
-      color: #ff5c8a;
+      margin-bottom: 5px;
+      color: #ff5e5e;
     }
 
-    .avatar {
-      width: 100%;
-      border-radius: 15px;
-      margin-top: 10px;
+    .section p {
+      margin: 0;
+      color: #444;
+      font-size: 14px;
+    }
+
+    form {
+      margin-top: 20px;
     }
 
     input, textarea {
@@ -61,12 +84,17 @@
       font-size: 14px;
     }
 
+    textarea {
+      resize: none;
+      height: 80px;
+    }
+
     button {
       width: 100%;
       padding: 12px;
-      background: #ff5c8a;
       border: none;
       border-radius: 12px;
+      background: linear-gradient(135deg, #ff5e5e, #ff9a9e);
       color: white;
       font-size: 16px;
       font-weight: bold;
@@ -74,70 +102,51 @@
     }
 
     button:hover {
-      background: #ff3b70;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 12px;
-      color: #777;
-      margin-top: 10px;
+      opacity: 0.9;
     }
   </style>
 </head>
 <body>
 
-<div class="container">
-  <h1>Phạm Hải Đăng</h1>
-  <div class="class">12A4</div>
+  <div class="card">
+    <!-- Ảnh -->
+    <img class="avatar" src="https://i.imgur.com/8Km9tLL.jpg" alt="Avatar">
 
-  <div class="section">
-    <h3>👦 Về mình</h3>
-    <p>
-      Ít nói, chân thành, không thích mập mờ.<br>
-      Thích nói chuyện khuya và quan tâm đúng lúc.
-    </p>
-  </div>
+    <!-- Tên -->
+    <h1>Phạm Hải Đăng</h1>
+    <div class="class">Lớp 12A4</div>
 
-  <div class="section">
-    <h3>❤️ Sở thích</h3>
-    <p>Nghe nhạc, nhắn tin khuya, quan tâm một người duy nhất.</p>
-  </div>
+    <!-- Sở thích -->
+    <div class="section">
+      <h3>Sở thích</h3>
+      <p>Code web, nghe nhạc, đêm khuya suy nghĩ linh tinh 😌</p>
+    </div>
 
-  <div class="section">
-    <h3>💘 Gu con gái</h3>
-    <p>Dễ thương, nói chuyện hợp, biết trân trọng cảm xúc.</p>
-  </div>
+    <!-- Gu -->
+    <div class="section">
+      <h3>Gu con gái</h3>
+      <p>Dễ thương, nói chuyện hợp vibe, không ghost 👀</p>
+    </div>
 
-  <div class="section">
-    <h3>📸 Ảnh của mình</h3>
-    <img src="https://i.imgur.com/8Km9tLL.png" class="avatar">
-  </div>
-
-  <!-- FORM SUBMIT -->
-  <div class="section">
-    <h3>💌 Nếu bạn thấy hợp</h3>
-
-    <form action="https://formsubmit.co/dangnhatminh18122008@gmail.com" method="POST">
-      <input type="text" name="Tên" placeholder="Tên của bạn" required>
-      <input type="text" name="Số điện thoại" placeholder="Số điện thoại" required>
-      <input type="text" name="Facebook" placeholder="Link Facebook">
-      <textarea name="Lời nhắn" rows="3" placeholder="Lời nhắn cho mình"></textarea>
-
-      <!-- cấu hình FormSubmit -->
+    <!-- FORM -->
+    <form action="https://formsubmit.co/youremail@gmail.com" method="POST">
+      <!-- Chống spam -->
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_subject" value="💖 Có người quan tâm bạn">
-      <input type="hidden" name="_template" value="table">
+
+      <!-- Trang cảm ơn -->
       <input type="hidden" name="_next" value="thankyou.html">
 
-      <button type="submit">Gửi thông tin</button>
+      <!-- Tiêu đề mail -->
+      <input type="hidden" name="_subject" value="Có người muốn làm quen ❤️">
+
+      <input type="text" name="Tên" placeholder="Tên của bạn" required>
+      <input type="tel" name="SĐT" placeholder="Số điện thoại" required>
+      <input type="text" name="Facebook" placeholder="Link Facebook">
+      <textarea name="Lời nhắn" placeholder="Nhắn gì đó cho mình nè..."></textarea>
+
+      <button type="submit">Gửi cho Đăng 💌</button>
     </form>
   </div>
-
-  <footer>
-    Thông tin chỉ gửi riêng cho mình 😉
-  </footer>
-</div>
 
 </body>
 </html>
