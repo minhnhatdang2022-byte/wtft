@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Phạm Hải Đăng | 12A4</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("PUBLIC_KEY_CUA_M");
+    })();
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff6a88, #ff99ac);
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      background: #fff;
+      max-width: 420px;
+      width: 100%;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .class {
+      text-align: center;
+      color: #ff5c8a;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section h3 {
+      margin-bottom: 8px;
+      color: #ff5c8a;
+    }
+
+    .avatar {
+      width: 100%;
+      border-radius: 15px;
+      margin-top: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #ff5c8a;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #ff3b70;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #777;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Phạm Hải Đăng</h1>
+  <div class="class">12A4</div>
+
+  <div class="section">
+    <h3>👦 Về mình</h3>
+    <p>
+      Ít nói, chân thành, không thích mập mờ.<br>
+      Thích nói chuyện khuya và quan tâm đúng lúc.
+    </p>
+  </div>
+
+  <div class="section">
+    <h3>❤️ Sở thích</h3>
+    <p>Nghe nhạc, nhắn tin khuya, quan tâm một người duy nhất.</p>
+  </div>
+
+  <div class="section">
+    <h3>💘 Gu con gái</h3>
+    <p>
+      Dễ thương, nói chuyện hợp, biết trân trọng cảm xúc.
+    </p>
+  </div>
+
+  <div class="section">
+    <h3>📸 Ảnh của mình</h3>
+    <img src="https://i.imgur.com/8Km9tLL.png" class="avatar">
+  </div>
+
+  <div class="section">
+    <h3>💌 Nếu bạn thấy hợp</h3>
+    <input id="name" placeholder="Tên của bạn">
+    <input id="phone" placeholder="Số điện thoại">
+    <input id="facebook" placeholder="Link Facebook">
+    <textarea id="message" rows="3" placeholder="Lời nhắn cho mình"></textarea>
+
+    <button onclick="send()">Gửi thông tin</button>
+  </div>
+
+  <footer>
+    Thông tin chỉ gửi riêng cho mình 😉
+  </footer>
+</div>
+
+<script>
+  function send() {
+    emailjs.send("SERVICE_ID_CUA_M", "TEMPLATE_ID_CUA_M", {
+      name: document.getElementById("name").value,
+      phone: document.getElementById("phone").value,
+      facebook: document.getElementById("facebook").value,
+      message: document.getElementById("message").value
+    }).then(
+      () => alert("Gửi thành công 💖"),
+      () => alert("Lỗi rồi 😢")
+    );
+  }
+</script>
+
+</body>
+</html>
