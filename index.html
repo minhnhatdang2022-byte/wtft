@@ -5,13 +5,6 @@
   <title>Phạm Hải Đăng | 12A4</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("z7dqMeAf3TPfCkqut");
-    })();
-  </script>
-
   <style>
     body {
       margin: 0;
@@ -77,6 +70,7 @@
       color: white;
       font-size: 16px;
       font-weight: bold;
+      cursor: pointer;
     }
 
     button:hover {
@@ -112,9 +106,7 @@
 
   <div class="section">
     <h3>💘 Gu con gái</h3>
-    <p>
-      Dễ thương, nói chuyện hợp, biết trân trọng cảm xúc.
-    </p>
+    <p>Dễ thương, nói chuyện hợp, biết trân trọng cảm xúc.</p>
   </div>
 
   <div class="section">
@@ -122,34 +114,30 @@
     <img src="https://i.imgur.com/8Km9tLL.png" class="avatar">
   </div>
 
+  <!-- FORM SUBMIT -->
   <div class="section">
     <h3>💌 Nếu bạn thấy hợp</h3>
-    <input id="name" placeholder="Tên của bạn">
-    <input id="phone" placeholder="Số điện thoại">
-    <input id="facebook" placeholder="Link Facebook">
-    <textarea id="message" rows="3" placeholder="Lời nhắn cho mình"></textarea>
 
-    <button onclick="send()">Gửi thông tin</button>
+    <form action="https://formsubmit.co/EMAIL_CUA_M@gmail.com" method="POST">
+      <input type="text" name="Tên" placeholder="Tên của bạn" required>
+      <input type="text" name="Số điện thoại" placeholder="Số điện thoại" required>
+      <input type="text" name="Facebook" placeholder="Link Facebook">
+      <textarea name="Lời nhắn" rows="3" placeholder="Lời nhắn cho mình"></textarea>
+
+      <!-- cấu hình FormSubmit -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="💖 Có người quan tâm bạn">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="thankyou.html">
+
+      <button type="submit">Gửi thông tin</button>
+    </form>
   </div>
 
   <footer>
     Thông tin chỉ gửi riêng cho mình 😉
   </footer>
 </div>
-
-<script>
-  function send() {
-    emailjs.send("service_v1jh4nd", "template_gdwvp8u", {
-      name: document.getElementById("name").value,
-      phone: document.getElementById("phone").value,
-      facebook: document.getElementById("facebook").value,
-      message: document.getElementById("message").value
-    }).then(
-      () => alert("Gửi thành công 💖"),
-      () => alert("Lỗi rồi 😢")
-    );
-  }
-</script>
 
 </body>
 </html>
